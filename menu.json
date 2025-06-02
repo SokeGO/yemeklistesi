@@ -1,0 +1,211 @@
+[
+  {
+    "gun": "Pazartesi",
+    "ogunler": {
+      "Sabah": [
+        {
+          "ad": "Beyaz Peynir",
+          "gorsel": "images/beyaz-peynir.jpg"
+        },
+        {
+          "ad": "Zeytin",
+          "gorsel": "images/zeytin.jpg"
+        },
+        {
+          "ad": "Domates ve Salatalık",
+          "gorsel": "images/domates-salatalik.jpg"
+        }
+      ],
+      "Öğlen": [
+        {
+          "ad": "Mercimek Çorbası",
+          "gorsel": "images/mercimek-corbasi.jpg"
+        },
+        {
+          "ad": "Izgara Tavuk Salatası",
+          "gorsel": "images/izgara-tavuk-salatasi.jpg"
+        }
+      ],
+      "Akşam": [
+        {
+          "ad": "Fırında Somon",
+          "gorsel": "images/firinda-somon.jpg"
+        },
+        {
+          "ad": "Buharda Pişmiş Brokoli",
+          "gorsel": "images/brokoli.jpg"
+        }
+      ]
+    }
+  },
+  {
+    "gun": "Salı",
+    "ogunler": {
+      "Sabah": [
+        {
+          "ad": "Yulaf Ezmesi",
+          "gorsel": "images/yulaf-ezmesi.jpg"
+        },
+        {
+          "ad": "Meyve Salatası",
+          "gorsel": "images/meyve-salatasi.jpg"
+        }
+      ],
+      "Öğlen": [
+        {
+          "ad": "Kıymalı Makarna",
+          "gorsel": "images/kiymali-makarna.jpg"
+        }
+      ],
+      "Akşam": [
+        {
+          "ad": "Sebzeli Güveç",
+          "gorsel": "images/sebzeli-guvec.jpg"
+        }
+      ]
+    }
+  },
+  {
+    "gun": "Çarşamba",
+    "ogunler": {
+        "Sabah": [
+            {
+                "ad": "Haşlanmış Yumurta",
+                "gorsel": "images/haslanmis-yumurta.jpg"
+            },
+            {
+                "ad": "Kepek Ekmeği",
+                "gorsel": "images/kepek-ekmegi.jpg"
+            }
+        ],
+        "Öğlen": [
+            {
+                "ad": "Ton Balıklı Salata",
+                "gorsel": "images/ton-balikli-salata.jpg"
+            }
+        ],
+        "Akşam": [
+            {
+                "ad": "İslim Kebabı",
+                "gorsel": "images/islim-kebabi.jpg"
+            },
+            {
+                "ad": "Pirinç Pilavı",
+                "gorsel": "images/pirinc-pilavi.jpg"
+            }
+        ]
+    }
+  },
+  {
+      "gun": "Perşembe",
+      "ogunler": {
+          "Sabah": [
+              {
+                  "ad": "Menemen",
+                  "gorsel": "images/menemen.jpg"
+              }
+          ],
+          "Öğlen": [
+              {
+                  "ad": "Zeytinyağlı Enginar",
+                  "gorsel": "images/zeytinyagli-enginar.jpg"
+              }
+          ],
+          "Akşam": [
+              {
+                  "ad": "Izgara Köfte",
+                  "gorsel": "images/izgara-kofte.jpg"
+              },
+              {
+                  "ad": "Patates Püresi",
+                  "gorsel": "images/patates-puresi.jpg"
+              }
+          ]
+      }
+  },
+  {
+      "gun": "Cuma",
+      "ogunler": {
+          "Sabah": [
+              {
+                  "ad": "Pankek",
+                  "gorsel": "images/pankek.jpg"
+              },
+              {
+                  "ad": "Bal ve Kaymak",
+                  "gorsel": "images/bal-kaymak.jpg"
+              }
+          ],
+          "Öğlen": [
+              {
+                  "ad": "Tavuk Sote",
+                  "gorsel": "images/tavuk-sote.jpg"
+              }
+          ],
+          "Akşam": [
+              {
+                  "ad": "Hamsi Tava",
+                  "gorsel": "images/hamsi-tava.jpg"
+              },
+              {
+                  "ad": "Mısır Ekmeği",
+                  "gorsel": "images/misir-ekmegi.jpg"
+              }
+          ]
+      }
+  },
+  {
+      "gun": "Cumartesi",
+      "ogunler": {
+          "Sabah": [
+              {
+                  "ad": "Serpme Kahvaltı",
+                  "gorsel": "images/serpme-kahvalti.jpg"
+              }
+          ],
+          "Öğlen": [
+              {
+                  "ad": "Pizza",
+                  "gorsel": "images/pizza.jpg"
+              }
+          ],
+          "Akşam": [
+              {
+                  "ad": "Adana Kebap",
+                  "gorsel": "images/adana-kebap.jpg"
+              },
+              {
+                  "ad": "Gavurdağı Salatası",
+                  "gorsel": "images/gavurdagi-salatasi.jpg"
+              }
+          ]
+      }
+  },
+  {
+      "gun": "Pazar",
+      "ogunler": {
+          "Sabah": [
+              {
+                  "ad": "Köy Kahvaltısı",
+                  "gorsel": "images/koy-kahvaltisi.jpg"
+              }
+          ],
+          "Öğlen": [
+              {
+                  "ad": "Mantı",
+                  "gorsel": "images/manti.jpg"
+              }
+          ],
+          "Akşam": [
+              {
+                  "ad": "Güveçte Kuru Fasulye",
+                  "gorsel": "images/kuru-fasulye.jpg"
+              },
+              {
+                  "ad": "Turşu",
+                  "gorsel": "images/tursu.jpg"
+              }
+          ]
+      }
+  }
+] 

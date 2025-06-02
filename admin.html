@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli - Yemek Menüsü</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ortak stilleri kullanıyoruz -->
+</head>
+<body>
+    <header>
+        <h1>Admin Paneli - Haftalık Yemek Menüsü</h1>
+    </header>
+
+    <div class="admin-container" id="login-section">
+        <h2>Giriş Yap</h2>
+        <div class="form-group">
+            <label for="password">Şifre:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <button id="login-button">Giriş</button>
+    </div>
+
+    <div class="admin-container" id="edit-section" style="display: none;">
+        <h2>Menüyü Düzenle</h2>
+        
+        <div class="form-group">
+            <label for="select-day">Gün Seç:</label>
+            <select id="select-day">
+                <!-- Günler JavaScript ile eklenecek -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="select-meal-type">Öğün Seç:</label>
+            <select id="select-meal-type">
+                <option value="Sabah">Sabah</option>
+                <option value="Öğlen">Öğlen</option>
+                <option value="Akşam">Akşam</option>
+            </select>
+        </div>
+
+        <hr>
+
+        <h3>Mevcut Yemekler</h3>
+        <ul id="current-meals-list">
+            <!-- Mevcut yemekler buraya eklenecek -->
+        </ul>
+
+        <hr>
+
+        <h3>Yeni Yemek Ekle / Düzenle</h3>
+        <input type="hidden" id="edit-meal-index" value="-1"> <!-- Düzenleme için index -->
+        <div class="form-group">
+            <label for="food-name">Yemek Adı:</label>
+            <input type="text" id="food-name" placeholder="Örn: Mercimek Çorbası">
+        </div>
+        <div class="form-group">
+            <label for="food-image-url">Yemek Görsel URL'si:</label>
+            <input type="url" id="food-image-url" placeholder="Örn: images/mercimek-corbasi.jpg">
+        </div>
+        <button id="add-update-food-button">Yemeği Ekle/Güncelle</button>
+        <button id="clear-form-button" style="background-color: #f0ad4e; margin-left: 10px;">Formu Temizle</button>
+
+        <hr style="margin-top: 2rem; margin-bottom: 1rem;">
+        <button id="save-changes-button" style="background-color: #337ab7; width: 100%; padding: 1rem; font-size: 1.2rem;">Tüm Değişiklikleri Kaydet</button>
+         <p style="text-align: center; margin-top: 1rem;"><a href="index.html">Ana Sayfaya Dön</a></p>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html> 
