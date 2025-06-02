@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const dayTabsContainer = document.getElementById('day-tabs');
     const menuContainer = document.getElementById('menu-container');
+    const dayPrevBtn = document.getElementById('day-prev');
+    const dayNextBtn = document.getElementById('day-next');
     let menuData = [];
+    let currentDayIndex = 0;
 
     // localStorage'dan veriyi yükle, yoksa JSON'dan yükle
     async function loadMenuData() {
@@ -29,25 +32,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         createDayTabs();
         if (menuData.length > 0) {
-            displayMenuForDay(menuData[0].gun); // Başlangıçta ilk günü göster
-            activateTab(menuData[0].gun);
+            showDay(0);
         }
     }
 
     function createDayTabs() {
         if (!dayTabsContainer) return;
-        dayTabsContainer.innerHTML = ''; // Önceki sekmeleri temizle
-        menuData.forEach(dayData => {
+        dayTabsContainer.innerHTML = '';
+        menuData.forEach((dayData, i) => {
             const tabButton = document.createElement('button');
             tabButton.classList.add('tab-button');
             tabButton.textContent = dayData.gun;
-            tabButton.dataset.day = dayData.gun; // Hangi güne ait olduğunu belirtmek için
+            tabButton.dataset.day = dayData.gun;
             tabButton.addEventListener('click', () => {
-                displayMenuForDay(dayData.gun);
-                activateTab(dayData.gun);
+                showDay(i);
             });
             dayTabsContainer.appendChild(tabButton);
         });
+    }
+
+    function showDay(index) {
+        if (!menuData[index]) return;
+        currentDayIndex = index;
+        displayMenuForDay(menuData[index].gun);
+        activateTab(menuData[index].gun);
+        updateSliderArrows();
+        scrollTabIntoView(index);
     }
 
     function activateTab(selectedDay) {
@@ -62,67 +72,137 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function updateSliderArrows() {
+        if (!dayPrevBtn || !dayNextBtn) return;
+        dayPrevBtn.disabled = currentDayIndex === 0;
+        dayNextBtn.disabled = currentDayIndex === menuData.length - 1;
+    }
+
+    function scrollTabIntoView(index) {
+        const tabButtons = dayTabsContainer.querySelectorAll('.tab-button');
+        if (tabButtons[index]) {
+            tabButtons[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+    }
+
+    if (dayPrevBtn) {
+        dayPrevBtn.addEventListener('click', () => {
+            if (currentDayIndex > 0) showDay(currentDayIndex - 1);
+        });
+    }
+    if (dayNextBtn) {
+        dayNextBtn.addEventListener('click', () => {
+            if (currentDayIndex < menuData.length - 1) showDay(currentDayIndex + 1);
+        });
+    }
+
     function displayMenuForDay(dayName) {
         if (!menuContainer) return;
-        menuContainer.innerHTML = ''; // Önceki menüyü temizle
-
+        menuContainer.innerHTML = '';
         const dayMenuData = menuData.find(day => day.gun === dayName);
-
         if (!dayMenuData) {
-            if (menuContainer) {
-                menuContainer.innerHTML = '<p>Bu gün için menü bulunamadı.</p>';
-            }
+            menuContainer.innerHTML = '<p>Bu gün için menü bulunamadı.</p>';
             return;
         }
-
-        // Mobil için: Her öğün ayrı bir kartta dikey olarak
-        // Masaüstü için: Öğünler yan yana (CSS grid ile)
-        // CSS zaten menu-container için grid ayarını yapıyor, bu yüzden burada özel bir şey yapmaya gerek yok
-        // Sadece öğün kartlarını oluşturacağız.
-
         const dayMenuDiv = document.createElement('div');
-        dayMenuDiv.classList.add('day-menu', 'active'); // active class'ı varsayılan olarak eklenebilir veya tab ile yönetilebilir
-
-        for (const mealType in dayMenuData.ogunler) { // Sabah, Öğlen, Akşam
+        dayMenuDiv.classList.add('day-menu', 'active');
+        const mealTypes = ['Sabah', 'Öğlen', 'Akşam'];
+        mealTypes.forEach(mealType => {
             const mealCard = document.createElement('div');
             mealCard.classList.add('meal-card');
-
             const mealTitle = document.createElement('h3');
             mealTitle.textContent = mealType;
             mealCard.appendChild(mealTitle);
-
-            const meals = dayMenuData.ogunler[mealType];
+            const meals = (dayMenuData.ogunler && dayMenuData.ogunler[mealType]) ? dayMenuData.ogunler[mealType] : [];
+            const foodList = document.createElement('div');
+            foodList.classList.add('food-list');
             if (meals.length > 0) {
                 meals.forEach(food => {
                     const foodItemDiv = document.createElement('div');
                     foodItemDiv.classList.add('food-item');
-
                     const foodImage = document.createElement('img');
                     foodImage.src = food.gorsel;
                     foodImage.alt = food.ad;
-                    // Hata durumunda varsayılan görsel veya metin
                     foodImage.onerror = () => {
-                        foodImage.alt = "Görsel yüklenemedi";
-                        // Alternatif olarak: foodImage.style.display = 'none';
-                        // Veya bir yer tutucu görsel: foodImage.src = 'images/placeholder.jpg';
+                        // SVG fallback ekle
+                        if (!foodItemDiv.querySelector('.fallback-svg')) {
+                            foodImage.style.display = 'none';
+                            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                            svg.setAttribute('viewBox', '0 0 64 64');
+                            svg.setAttribute('class', 'fallback-svg');
+                            svg.innerHTML = `<circle cx="32" cy="32" r="30" fill="#232946" stroke="#d4af37" stroke-width="4"/><g><rect x="18" y="36" width="28" height="8" rx="4" fill="#ffe082"/><ellipse cx="32" cy="28" rx="12" ry="8" fill="#ffe082"/><ellipse cx="32" cy="28" rx="8" ry="5" fill="#232946" opacity=".5"/></g>`;
+                            foodItemDiv.insertBefore(svg, foodName);
+                        }
                     };
-
                     const foodName = document.createElement('p');
                     foodName.textContent = food.ad;
-
                     foodItemDiv.appendChild(foodImage);
                     foodItemDiv.appendChild(foodName);
-                    mealCard.appendChild(foodItemDiv);
+                    foodList.appendChild(foodItemDiv);
                 });
             } else {
                 const noFoodMessage = document.createElement('p');
                 noFoodMessage.textContent = 'Bu öğün için henüz yemek eklenmemiş.';
-                mealCard.appendChild(noFoodMessage);
+                noFoodMessage.style.textAlign = 'center';
+                foodList.appendChild(noFoodMessage);
             }
+            mealCard.appendChild(foodList);
             dayMenuDiv.appendChild(mealCard);
-        }
+        });
         menuContainer.appendChild(dayMenuDiv);
     }
 
     loadMenuData();
+
+    // Modal ve JSON gösterim/indirme fonksiyonları
+    function getCurrentMenuJson() {
+        // localStorage'da varsa onu, yoksa menuData'yı döndür
+        const storedMenu = localStorage.getItem('weeklyMenu');
+        if (storedMenu) return JSON.parse(storedMenu);
+        return menuData;
+    }
+
+    function showJsonModal() {
+        const modal = document.getElementById('json-modal');
+        const viewer = document.getElementById('json-viewer');
+        if (modal && viewer) {
+            const json = getCurrentMenuJson();
+            viewer.textContent = JSON.stringify(json, null, 2);
+            modal.style.display = 'flex';
+        }
+    }
+    function closeJsonModal() {
+        const modal = document.getElementById('json-modal');
+        if (modal) modal.style.display = 'none';
+    }
+    function downloadJson() {
+        const json = getCurrentMenuJson();
+        const blob = new Blob([JSON.stringify(json, null, 2)], {type: 'application/json'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'haftalik-menu.json';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }, 100);
+    }
+    // Event binding
+    window.addEventListener('DOMContentLoaded', () => {
+        const showBtn = document.getElementById('show-json-btn');
+        const downloadBtn = document.getElementById('download-json-btn');
+        const closeModalBtn = document.querySelector('.close-modal');
+        if (showBtn) showBtn.addEventListener('click', showJsonModal);
+        if (downloadBtn) downloadBtn.addEventListener('click', downloadJson);
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeJsonModal);
+        // Modal dışına tıklayınca kapansın
+        const modal = document.getElementById('json-modal');
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeJsonModal();
+            });
+        }
+    });
 }); 

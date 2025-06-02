@@ -63,7 +63,37 @@
 
         <hr style="margin-top: 2rem; margin-bottom: 1rem;">
         <button id="save-changes-button" style="background-color: #337ab7; width: 100%; padding: 1rem; font-size: 1.2rem;">Tüm Değişiklikleri Kaydet</button>
-         <p style="text-align: center; margin-top: 1rem;"><a href="index.html">Ana Sayfaya Dön</a></p>
+        
+        <hr style="margin-top: 2rem; margin-bottom: 1rem;">
+        <h3>JSON'dan Menü Yükle</h3>
+        <div class="form-group">
+            <label for="json-menu-input">JSON Menü Verisi:</label>
+            <textarea id="json-menu-input" rows="8" style="width:100%; font-family:monospace; font-size:1rem;"></textarea>
+        </div>
+        <button id="load-json-menu-button" style="background-color:#16a085; color:#fff; width:100%;">JSON'dan Yükle</button>
+        <div id="json-menu-message" style="margin-top:1rem; text-align:center;"></div>
+        <div style="margin-top:2rem;">
+            <strong>Beklenen JSON Formatı Örneği:</strong>
+            <pre style="background:#f8fafc; color:#222; border:1px solid #eee; border-radius:8px; padding:1rem; font-size:0.95rem; overflow-x:auto;">
+[
+  {
+    "gun": "Pazartesi",
+    "ogunler": {
+      "Sabah": [
+        { "ad": "Beyaz Peynir", "gorsel": "https://placehold.co/300x200?text=Beyaz+Peynir" }
+      ],
+      "Öğlen": [
+        { "ad": "Düğün Çorbası", "gorsel": "https://placehold.co/300x200?text=Düğün+Çorbası" }
+      ],
+      "Akşam": [
+        { "ad": "Etli Taze Fasulye", "gorsel": "https://placehold.co/300x200?text=Etli+Taze+Fasulye" }
+      ]
+    }
+  }
+]
+            </pre>
+        </div>
+        <p style="text-align: center; margin-top: 1rem;"><a href="index.html">Ana Sayfaya Dön</a></p>
     </div>
 
     <script src="admin.js"></script>

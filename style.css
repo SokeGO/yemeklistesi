@@ -1,152 +1,257 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap');
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     margin: 0;
-    background-color: #1a1a1a; /* Koyu arka plan */
-    color: #f4f4f4; /* Açık renk yazı */
-    line-height: 1.7;
-    font-weight: 300;
+    background: linear-gradient(135deg, #232946 0%, #16161a 100%);
+    color: #f4f4f4;
+    min-height: 100vh;
 }
 
-header {
-    background: linear-gradient(to right, #2c3e50, #34495e); /* Koyu ve şık bir gradient */
-    color: #ecf0f1;
-    padding: 2rem 1rem;
+/* HERO */
+header.hero {
+    background: none;
+    padding: 3.5rem 1rem 2rem 1rem;
     text-align: center;
-    margin-bottom: 2rem;
-    border-bottom: 3px solid #D4AF37; /* Altın rengi vurgu */
+    position: relative;
 }
-
-header h1 {
-    margin: 0;
+.app-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    font-weight: 700;
+    font-size: 2.7rem;
+    color: #ffe082;
+    margin: 0 0 0.5rem 0;
     letter-spacing: 1px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-shadow: 0 2px 16px #0008;
 }
-
-nav#day-tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-    padding: 0 1rem;
-}
-
-.tab-button {
-    padding: 0.8rem 1.8rem;
-    margin: 0.5rem;
-    cursor: pointer;
-    border: 1px solid #555;
-    background-color: transparent;
-    color: #ccc;
-    border-radius: 50px; /* Daha modern hap şeklinde butonlar */
-    font-family: 'Lato', sans-serif;
+.app-title span {
+    display: block;
+    font-size: 2.1rem;
+    color: #fff;
     font-weight: 400;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
+    letter-spacing: 2px;
+}
+.app-desc {
+    font-size: 1.15rem;
+    color: #ffe082;
+    margin: 0.5rem 0 0 0;
     letter-spacing: 0.5px;
+    opacity: 0.85;
 }
 
-.tab-button:hover,
-.tab-button.active {
-    background-color: #D4AF37; /* Altın rengi aktif/hover */
-    color: #1a1a1a; /* Koyu yazı rengi */
-    border-color: #D4AF37;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.2);
+/* GÜN SLIDER */
+.day-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 1.5rem 0;
+    gap: 0.5rem;
+}
+.slider-arrow {
+    background: rgba(30,30,40,0.7);
+    border: none;
+    font-size: 2rem;
+    color: #ffe082;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px #0003;
+}
+.slider-arrow:disabled {
+    color: #444;
+    background: #222b;
+    cursor: default;
+}
+#day-tabs {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+    padding: 0 0.5rem;
+}
+#day-tabs::-webkit-scrollbar { display: none; }
+.tab-button {
+    min-width: 110px;
+    padding: 0.7rem 1.2rem;
+    background: rgba(30,30,40,0.7);
+    border: 2px solid #ffe08244;
+    border-radius: 30px;
+    color: #ffe082;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px #0002;
+    outline: none;
+    backdrop-filter: blur(4px);
+}
+.tab-button.active, .tab-button:hover {
+    background: rgba(255,224,130,0.13);
+    color: #fff;
+    border-color: #ffe082;
+    box-shadow: 0 4px 16px #ffe08222;
 }
 
+/* MENÜ KARTLARI */
 main#menu-container {
-    display: grid;
-    gap: 2rem; /* Kartlar arası boşluk artırıldı */
-    padding: 1rem 2rem; /* Kenar boşlukları artırıldı */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem 2rem 1rem;
 }
-
 .day-menu {
-    /* Başlangıçta gizli, aktif sekme ile gösterilecek */
-    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    align-items: center;
+    margin-top: 1rem;
+    animation: fadeIn 0.7s cubic-bezier(.4,2,.6,1);
+}
+@media (min-width: 900px) {
+    .day-menu {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        gap: 3rem;
+    }
 }
 
 .meal-card {
-    background: #2b2b2b; /* Kartlar için biraz daha açık koyu ton */
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Daha belirgin gölge */
-    padding: 1.8rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #3a3a3a;
+    background: rgba(36, 40, 54, 0.72);
+    border-radius: 22px;
+    box-shadow: 0 8px 32px #0006, 0 1.5px 8px #ffe08222;
+    padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+    min-width: 320px;
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s, background 0.25s;
+    border: 1.5px solid #ffe08255;
+    position: relative;
+    animation: popIn 0.7s cubic-bezier(.4,2,.6,1);
+    backdrop-filter: blur(12px) saturate(1.2);
 }
-
 .meal-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 16px 40px #0009, 0 2px 12px #ffe08233;
+    border-color: #ffe082;
+    background: rgba(36, 40, 54, 0.88);
 }
-
 .meal-card h3 {
     font-family: 'Playfair Display', serif;
-    margin-top: 0;
-    color: #D4AF37; /* Altın rengi başlık */
-    border-bottom: 1px solid #444;
-    padding-bottom: 0.8rem;
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
+    color: #ffe082;
+    font-size: 1.5rem;
+    margin: 0 0 1.2rem 0;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+    text-shadow: 0 2px 8px #0006;
+}
+.meal-card h3::after {
+    content: '';
+    display: block;
+    margin: 0.5rem auto 0 auto;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #ffe082 60%, #fff0 100%);
+    border-radius: 2px;
+}
+
+.food-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem 0.7rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+@media (max-width: 600px) {
+    .meal-card {
+        min-width: 90vw;
+        max-width: 98vw;
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+    }
+    .food-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 .food-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.2rem;
-    padding: 1rem;
-    background-color: #333;
-    border-radius: 8px;
-    border-left: 4px solid #D4AF37; /* Altın rengi sol kenarlık */
-    transition: background-color 0.3s ease;
-}
-
-.food-item:last-child {
+    background: rgba(255,255,255,0.07);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0002;
     margin-bottom: 0;
+    padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    border: 1.5px solid #ffe08222;
+    backdrop-filter: blur(2px);
 }
-
 .food-item:hover {
-    background-color: #3f3f3f;
+    background: rgba(255,224,130,0.10);
+    box-shadow: 0 4px 16px #ffe08222;
+    border-color: #ffe082;
+    transform: scale(1.04);
 }
-
 .food-item img {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 74px;
     object-fit: cover;
-    margin-right: 1.5rem;
-    border-radius: 6px;
-    border: 2px solid #444;
+    border-radius: 8px;
+    border: 1.5px solid #ffe08255;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 8px #0003;
+    background: #232946;
 }
-
 .food-item p {
+    color: #ffe082;
+    font-size: 1.08rem;
+    font-weight: 600;
     margin: 0;
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: #e0e0e0;
+    text-align: center;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 4px #0008;
 }
 
 footer {
     text-align: center;
     padding: 2rem 1rem;
-    background: #222; /* Daha koyu footer */
-    color: #aaa;
+    background: rgba(36, 40, 54, 0.85);
+    color: #ffe082;
     margin-top: 3rem;
-    border-top: 1px solid #333;
+    border-top: 1.5px solid #ffe08244;
+    backdrop-filter: blur(6px);
 }
-
 footer a {
-    color: #D4AF37; /* Altın rengi link */
+    color: #ffe082;
     text-decoration: none;
     font-weight: 700;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
-
 footer a:hover {
     color: #fff;
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: none; }
+}
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Admin paneli ve diğer stiller eski koddan korunabilir */
 
 /* Responsive Tasarım İyileştirmeleri */
 @media (min-width: 768px) {
@@ -332,4 +437,121 @@ footer a:hover {
 }
 .admin-container p a:hover {
     color: #fff;
+}
+
+.menu-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 2rem 0 1rem 0;
+}
+.menu-actions button {
+    background: linear-gradient(90deg, #ffe082 60%, #d4af37 100%);
+    color: #232946;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    padding: 0.8rem 2.2rem;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px #0003;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.menu-actions button:hover {
+    background: linear-gradient(90deg, #d4af37 60%, #ffe082 100%);
+    color: #fff;
+}
+.modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(30,30,40,0.75);
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(4px);
+}
+.modal-content {
+    background: rgba(36, 40, 54, 0.95);
+    border-radius: 18px;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    min-width: 320px; max-width: 95vw;
+    box-shadow: 0 8px 32px #0008, 0 1.5px 8px #ffe08222;
+    color: #ffe082;
+    position: relative;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+.close-modal {
+    position: absolute;
+    top: 1.2rem; right: 1.5rem;
+    font-size: 2rem;
+    color: #ffe082;
+    cursor: pointer;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+.close-modal:hover { color: #fff; }
+#json-viewer {
+    background: #16161a;
+    color: #ffe082;
+    border-radius: 8px;
+    padding: 1.2rem;
+    font-size: 1rem;
+    max-height: 60vh;
+    overflow: auto;
+    box-shadow: 0 2px 8px #0005;
+    margin-top: 1rem;
+}
+@media (max-width: 600px) {
+    .day-menu {
+        gap: 1.2rem;
+    }
+    .meal-card {
+        min-width: 98vw;
+        max-width: 99vw;
+        padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    }
+    .food-list {
+        grid-template-columns: 1fr;
+        gap: 0.7rem 0;
+    }
+    .food-item img {
+        width: 60px;
+        height: 60px;
+    }
+}
+.food-item img {
+    background: linear-gradient(135deg, #ffe08222 0%, #232946 100%);
+    border: 2.5px solid #d4af37;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 8px #0003;
+    display: block;
+}
+.food-item .fallback-svg {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin-bottom: 0.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffe08222 0%, #232946 100%);
+    border: 2.5px solid #d4af37;
+    box-shadow: 0 2px 8px #0003;
+    padding: 10px;
+}
+.food-item p {
+    color: #ffe082;
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin: 0 0 0.2rem 0;
+    text-align: center;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 4px #0008;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 0.2rem;
+    border-radius: 2px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 } 

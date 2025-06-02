@@ -3,19 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haftalık Yemek Menüsü</title>
+    <title>Suluca Kampüs Haftalık Yemek Listesi</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Haftalık Yemek Menüsü</h1>
+    <header class="hero">
+        <h1 class="app-title">Suluca Kampüs<br><span>Haftalık Yemek Listesi</span></h1>
+        <p class="app-desc">Her güne özel sabah, öğle ve akşam 4 çeşit yemek</p>
     </header>
-    <nav id="day-tabs">
-        <!-- Sekmeler JavaScript ile buraya eklenecek -->
-    </nav>
+    <div class="day-slider">
+        <button class="slider-arrow" id="day-prev" aria-label="Önceki Gün">&#8592;</button>
+        <nav id="day-tabs">
+            <!-- Sekmeler JavaScript ile buraya eklenecek -->
+        </nav>
+        <button class="slider-arrow" id="day-next" aria-label="Sonraki Gün">&#8594;</button>
+    </div>
     <main id="menu-container">
         <!-- Yemek kartları JavaScript ile buraya eklenecek -->
     </main>
+    <div class="menu-actions">
+        <button id="show-json-btn">Menüyü Gör</button>
+        <button id="download-json-btn">Menüyü İndir</button>
+    </div>
+    <div id="json-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Güncel Menü JSON</h2>
+            <pre id="json-viewer"></pre>
+        </div>
+    </div>
     <footer>
         <p><a href="admin.html">Admin Paneli</a></p>
     </footer>

@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const clearFormButton = document.getElementById('clear-form-button');
     const editMealIndexInput = document.getElementById('edit-meal-index');
 
+    // JSON'dan menü yükleme alanı
+    const jsonMenuInput = document.getElementById('json-menu-input');
+    const loadJsonMenuButton = document.getElementById('load-json-menu-button');
+    const jsonMenuMessage = document.getElementById('json-menu-message');
+
     const ADMIN_PASSWORD = "4353"; // Şifre güncellendi
     let weeklyMenuData = [];
 
@@ -225,5 +230,36 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!weeklyMenuData) return;
         localStorage.setItem('weeklyMenu', JSON.stringify(weeklyMenuData));
         console.log('Menü localStorage\'a kaydedildi.');
+    }
+
+    if (loadJsonMenuButton) {
+        loadJsonMenuButton.addEventListener('click', () => {
+            if (!jsonMenuInput) return;
+            let newMenu;
+            try {
+                newMenu = JSON.parse(jsonMenuInput.value);
+                if (!Array.isArray(newMenu)) throw new Error('Veri dizi (array) formatında olmalı.');
+                // Basit bir kontrol: Her gün nesnesinde gun ve ogunler olmalı
+                for (const day of newMenu) {
+                    if (!day.gun || !day.ogunler) throw new Error('Her gün için "gun" ve "ogunler" alanı olmalı.');
+                }
+                weeklyMenuData = newMenu;
+                saveMenuToLocalStorage();
+                populateDaySelector();
+                if (selectDay && weeklyMenuData.length > 0) {
+                    selectDay.value = weeklyMenuData[0].gun;
+                    populateMealsForSelectedDayAndMealType();
+                }
+                if (jsonMenuMessage) {
+                    jsonMenuMessage.textContent = 'Menü başarıyla yüklendi!';
+                    jsonMenuMessage.style.color = '#16a085';
+                }
+            } catch (err) {
+                if (jsonMenuMessage) {
+                    jsonMenuMessage.textContent = 'Hata: ' + err.message;
+                    jsonMenuMessage.style.color = '#c0392b';
+                }
+            }
+        });
     }
 }); 

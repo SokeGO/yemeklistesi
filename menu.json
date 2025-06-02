@@ -5,35 +5,55 @@
       "Sabah": [
         {
           "ad": "Beyaz Peynir",
-          "gorsel": "images/beyaz-peynir.jpg"
+          "gorsel": "https://placehold.co/300x200?text=Beyaz+Peynir"
         },
         {
-          "ad": "Zeytin",
-          "gorsel": "images/zeytin.jpg"
+          "ad": "Yeşil Zeytin",
+          "gorsel": "https://placehold.co/300x200?text=Yeşil+Zeytin"
         },
         {
-          "ad": "Domates ve Salatalık",
-          "gorsel": "images/domates-salatalik.jpg"
+          "ad": "Domates",
+          "gorsel": "https://placehold.co/300x200?text=Domates"
+        },
+        {
+          "ad": "Çay",
+          "gorsel": "https://placehold.co/300x200?text=Çay"
         }
       ],
       "Öğlen": [
         {
           "ad": "Mercimek Çorbası",
-          "gorsel": "images/mercimek-corbasi.jpg"
+          "gorsel": "https://placehold.co/300x200?text=Mercimek+Çorbası"
         },
         {
-          "ad": "Izgara Tavuk Salatası",
-          "gorsel": "images/izgara-tavuk-salatasi.jpg"
+          "ad": "Tavuk Sote",
+          "gorsel": "https://placehold.co/300x200?text=Tavuk+Sote"
+        },
+        {
+          "ad": "Pirinç Pilavı",
+          "gorsel": "https://placehold.co/300x200?text=Pirinç+Pilavı"
+        },
+        {
+          "ad": "Mevsim Salata",
+          "gorsel": "https://placehold.co/300x200?text=Mevsim+Salata"
         }
       ],
       "Akşam": [
         {
-          "ad": "Fırında Somon",
-          "gorsel": "images/firinda-somon.jpg"
+          "ad": "Ezogelin Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Ezogelin+Çorbası"
         },
         {
-          "ad": "Buharda Pişmiş Brokoli",
-          "gorsel": "images/brokoli.jpg"
+          "ad": "Karnıyarık",
+          "gorsel": "https://placehold.co/300x200?text=Karnıyarık"
+        },
+        {
+          "ad": "Bulgur Pilavı",
+          "gorsel": "https://placehold.co/300x200?text=Bulgur+Pilavı"
+        },
+        {
+          "ad": "İrmik Helvası",
+          "gorsel": "https://placehold.co/300x200?text=İrmik+Helvası"
         }
       ]
     }
@@ -43,24 +63,56 @@
     "ogunler": {
       "Sabah": [
         {
-          "ad": "Yulaf Ezmesi",
-          "gorsel": "images/yulaf-ezmesi.jpg"
+          "ad": "Kaşar Peyniri",
+          "gorsel": "https://placehold.co/300x200?text=Kaşar+Peyniri"
         },
         {
-          "ad": "Meyve Salatası",
-          "gorsel": "images/meyve-salatasi.jpg"
+          "ad": "Siyah Zeytin",
+          "gorsel": "https://placehold.co/300x200?text=Siyah+Zeytin"
+        },
+        {
+          "ad": "Salatalık",
+          "gorsel": "https://placehold.co/300x200?text=Salatalık"
+        },
+        {
+          "ad": "Açma",
+          "gorsel": "https://placehold.co/300x200?text=Açma"
         }
       ],
       "Öğlen": [
         {
-          "ad": "Kıymalı Makarna",
-          "gorsel": "images/kiymali-makarna.jpg"
+          "ad": "Tarhana Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Tarhana+Çorbası"
+        },
+        {
+          "ad": "Etli Bezelye",
+          "gorsel": "https://placehold.co/300x200?text=Etli+Bezelye"
+        },
+        {
+          "ad": "Şehriyeli Pilav",
+          "gorsel": "https://placehold.co/300x200?text=Şehriyeli+Pilav"
+        },
+        {
+          "ad": "Yoğurt",
+          "gorsel": "https://placehold.co/300x200?text=Yoğurt"
         }
       ],
       "Akşam": [
         {
-          "ad": "Sebzeli Güveç",
-          "gorsel": "images/sebzeli-guvec.jpg"
+          "ad": "Domates Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Domates+Çorbası"
+        },
+        {
+          "ad": "Köfte",
+          "gorsel": "https://placehold.co/300x200?text=Köfte"
+        },
+        {
+          "ad": "Patates Püresi",
+          "gorsel": "https://placehold.co/300x200?text=Patates+Püresi"
+        },
+        {
+          "ad": "Fırın Sütlaç",
+          "gorsel": "https://placehold.co/300x200?text=Fırın+Sütlaç"
         }
       ]
     }
@@ -68,144 +120,296 @@
   {
     "gun": "Çarşamba",
     "ogunler": {
-        "Sabah": [
-            {
-                "ad": "Haşlanmış Yumurta",
-                "gorsel": "images/haslanmis-yumurta.jpg"
-            },
-            {
-                "ad": "Kepek Ekmeği",
-                "gorsel": "images/kepek-ekmegi.jpg"
-            }
-        ],
-        "Öğlen": [
-            {
-                "ad": "Ton Balıklı Salata",
-                "gorsel": "images/ton-balikli-salata.jpg"
-            }
-        ],
-        "Akşam": [
-            {
-                "ad": "İslim Kebabı",
-                "gorsel": "images/islim-kebabi.jpg"
-            },
-            {
-                "ad": "Pirinç Pilavı",
-                "gorsel": "images/pirinc-pilavi.jpg"
-            }
-        ]
+      "Sabah": [
+        {
+          "ad": "Beyaz Peynir",
+          "gorsel": "https://placehold.co/300x200?text=Beyaz+Peynir"
+        },
+        {
+          "ad": "Siyah Zeytin",
+          "gorsel": "https://placehold.co/300x200?text=Siyah+Zeytin"
+        },
+        {
+          "ad": "Haşlanmış Yumurta",
+          "gorsel": "https://placehold.co/300x200?text=Haşlanmış+Yumurta"
+        },
+        {
+          "ad": "Çay",
+          "gorsel": "https://placehold.co/300x200?text=Çay"
+        }
+      ],
+      "Öğlen": [
+        {
+          "ad": "Ezogelin Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Ezogelin+Çorbası"
+        },
+        {
+          "ad": "Tavuk Haşlama",
+          "gorsel": "https://placehold.co/300x200?text=Tavuk+Haşlama"
+        },
+        {
+          "ad": "Bulgur Pilavı",
+          "gorsel": "https://placehold.co/300x200?text=Bulgur+Pilavı"
+        },
+        {
+          "ad": "Cacık",
+          "gorsel": "https://placehold.co/300x200?text=Cacık"
+        }
+      ],
+      "Akşam": [
+        {
+          "ad": "Mercimek Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Mercimek+Çorbası"
+        },
+        {
+          "ad": "Karnıbahar Graten",
+          "gorsel": "https://placehold.co/300x200?text=Karnıbahar+Graten"
+        },
+        {
+          "ad": "Pirinç Pilavı",
+          "gorsel": "https://placehold.co/300x200?text=Pirinç+Pilavı"
+        },
+        {
+          "ad": "Aşure",
+          "gorsel": "https://placehold.co/300x200?text=Aşure"
+        }
+      ]
     }
   },
   {
-      "gun": "Perşembe",
-      "ogunler": {
-          "Sabah": [
-              {
-                  "ad": "Menemen",
-                  "gorsel": "images/menemen.jpg"
-              }
-          ],
-          "Öğlen": [
-              {
-                  "ad": "Zeytinyağlı Enginar",
-                  "gorsel": "images/zeytinyagli-enginar.jpg"
-              }
-          ],
-          "Akşam": [
-              {
-                  "ad": "Izgara Köfte",
-                  "gorsel": "images/izgara-kofte.jpg"
-              },
-              {
-                  "ad": "Patates Püresi",
-                  "gorsel": "images/patates-puresi.jpg"
-              }
-          ]
-      }
+    "gun": "Perşembe",
+    "ogunler": {
+      "Sabah": [
+        {
+          "ad": "Beyaz Peynir",
+          "gorsel": "https://placehold.co/300x200?text=Beyaz+Peynir"
+        },
+        {
+          "ad": "Yeşil Zeytin",
+          "gorsel": "https://placehold.co/300x200?text=Yeşil+Zeytin"
+        },
+        {
+          "ad": "Salatalık",
+          "gorsel": "https://placehold.co/300x200?text=Salatalık"
+        },
+        {
+          "ad": "Poğaça",
+          "gorsel": "https://placehold.co/300x200?text=Poğaça"
+        }
+      ],
+      "Öğlen": [
+        {
+          "ad": "Yayla Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Yayla+Çorbası"
+        },
+        {
+          "ad": "Etli Türlü",
+          "gorsel": "https://placehold.co/300x200?text=Etli+Türlü"
+        },
+        {
+          "ad": "Şehriyeli Pilav",
+          "gorsel": "https://placehold.co/300x200?text=Şehriyeli+Pilav"
+        },
+        {
+          "ad": "Mevsim Salata",
+          "gorsel": "https://placehold.co/300x200?text=Mevsim+Salata"
+        }
+      ],
+      "Akşam": [
+        {
+          "ad": "Domates Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Domates+Çorbası"
+        },
+        {
+          "ad": "Fırında Tavuk",
+          "gorsel": "https://placehold.co/300x200?text=Fırında+Tavuk"
+        },
+        {
+          "ad": "Bulgur Pilavı",
+          "gorsel": "https://placehold.co/300x200?text=Bulgur+Pilavı"
+        },
+        {
+          "ad": "Sütlaç",
+          "gorsel": "https://placehold.co/300x200?text=Sütlaç"
+        }
+      ]
+    }
   },
   {
-      "gun": "Cuma",
-      "ogunler": {
-          "Sabah": [
-              {
-                  "ad": "Pankek",
-                  "gorsel": "images/pankek.jpg"
-              },
-              {
-                  "ad": "Bal ve Kaymak",
-                  "gorsel": "images/bal-kaymak.jpg"
-              }
-          ],
-          "Öğlen": [
-              {
-                  "ad": "Tavuk Sote",
-                  "gorsel": "images/tavuk-sote.jpg"
-              }
-          ],
-          "Akşam": [
-              {
-                  "ad": "Hamsi Tava",
-                  "gorsel": "images/hamsi-tava.jpg"
-              },
-              {
-                  "ad": "Mısır Ekmeği",
-                  "gorsel": "images/misir-ekmegi.jpg"
-              }
-          ]
-      }
+    "gun": "Cuma",
+    "ogunler": {
+      "Sabah": [
+        {
+          "ad": "Kaşar Peyniri",
+          "gorsel": "https://placehold.co/300x200?text=Kaşar+Peyniri"
+        },
+        {
+          "ad": "Siyah Zeytin",
+          "gorsel": "https://placehold.co/300x200?text=Siyah+Zeytin"
+        },
+        {
+          "ad": "Domates",
+          "gorsel": "https://placehold.co/300x200?text=Domates"
+        },
+        {
+          "ad": "Çay",
+          "gorsel": "https://placehold.co/300x200?text=Çay"
+        }
+      ],
+      "Öğlen": [
+        {
+          "ad": "Şehriye Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Şehriye+Çorbası"
+        },
+        {
+          "ad": "Kuru Fasulye",
+          "gorsel": "https://placehold.co/300x200?text=Kuru+Fasulye"
+        },
+        {
+          "ad": "Pirinç Pilavı",
+          "gorsel": "https://placehold.co/300x200?text=Pirinç+Pilavı"
+        },
+        {
+          "ad": "Yoğurt",
+          "gorsel": "https://placehold.co/300x200?text=Yoğurt"
+        }
+      ],
+      "Akşam": [
+        {
+          "ad": "Mercimek Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Mercimek+Çorbası"
+        },
+        {
+          "ad": "Izgara Köfte",
+          "gorsel": "https://placehold.co/300x200?text=Izgara+Köfte"
+        },
+        {
+          "ad": "Patates Püresi",
+          "gorsel": "https://placehold.co/300x200?text=Patates+Püresi"
+        },
+        {
+          "ad": "Fırın Sütlaç",
+          "gorsel": "https://placehold.co/300x200?text=Fırın+Sütlaç"
+        }
+      ]
+    }
   },
   {
-      "gun": "Cumartesi",
-      "ogunler": {
-          "Sabah": [
-              {
-                  "ad": "Serpme Kahvaltı",
-                  "gorsel": "images/serpme-kahvalti.jpg"
-              }
-          ],
-          "Öğlen": [
-              {
-                  "ad": "Pizza",
-                  "gorsel": "images/pizza.jpg"
-              }
-          ],
-          "Akşam": [
-              {
-                  "ad": "Adana Kebap",
-                  "gorsel": "images/adana-kebap.jpg"
-              },
-              {
-                  "ad": "Gavurdağı Salatası",
-                  "gorsel": "images/gavurdagi-salatasi.jpg"
-              }
-          ]
-      }
+    "gun": "Cumartesi",
+    "ogunler": {
+      "Sabah": [
+        {
+          "ad": "Beyaz Peynir",
+          "gorsel": "https://placehold.co/300x200?text=Beyaz+Peynir"
+        },
+        {
+          "ad": "Yeşil Zeytin",
+          "gorsel": "https://placehold.co/300x200?text=Yeşil+Zeytin"
+        },
+        {
+          "ad": "Salatalık",
+          "gorsel": "https://placehold.co/300x200?text=Salatalık"
+        },
+        {
+          "ad": "Açma",
+          "gorsel": "https://placehold.co/300x200?text=Açma"
+        }
+      ],
+      "Öğlen": [
+        {
+          "ad": "Tarhana Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Tarhana+Çorbası"
+        },
+        {
+          "ad": "Etli Bezelye",
+          "gorsel": "https://placehold.co/300x200?text=Etli+Bezelye"
+        },
+        {
+          "ad": "Şehriyeli Pilav",
+          "gorsel": "https://placehold.co/300x200?text=Şehriyeli+Pilav"
+        },
+        {
+          "ad": "Mevsim Salata",
+          "gorsel": "https://placehold.co/300x200?text=Mevsim+Salata"
+        }
+      ],
+      "Akşam": [
+        {
+          "ad": "Domates Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Domates+Çorbası"
+        },
+        {
+          "ad": "Köfte",
+          "gorsel": "https://placehold.co/300x200?text=Köfte"
+        },
+        {
+          "ad": "Patates Püresi",
+          "gorsel": "https://placehold.co/300x200?text=Patates+Püresi"
+        },
+        {
+          "ad": "Fırın Sütlaç",
+          "gorsel": "https://placehold.co/300x200?text=Fırın+Sütlaç"
+        }
+      ]
+    }
   },
   {
-      "gun": "Pazar",
-      "ogunler": {
-          "Sabah": [
-              {
-                  "ad": "Köy Kahvaltısı",
-                  "gorsel": "images/koy-kahvaltisi.jpg"
-              }
-          ],
-          "Öğlen": [
-              {
-                  "ad": "Mantı",
-                  "gorsel": "images/manti.jpg"
-              }
-          ],
-          "Akşam": [
-              {
-                  "ad": "Güveçte Kuru Fasulye",
-                  "gorsel": "images/kuru-fasulye.jpg"
-              },
-              {
-                  "ad": "Turşu",
-                  "gorsel": "images/tursu.jpg"
-              }
-          ]
-      }
+    "gun": "Pazar",
+    "ogunler": {
+      "Sabah": [
+        {
+          "ad": "Kaşar Peyniri",
+          "gorsel": "https://placehold.co/300x200?text=Kaşar+Peyniri"
+        },
+        {
+          "ad": "Siyah Zeytin",
+          "gorsel": "https://placehold.co/300x200?text=Siyah+Zeytin"
+        },
+        {
+          "ad": "Haşlanmış Yumurta",
+          "gorsel": "https://placehold.co/300x200?text=Haşlanmış+Yumurta"
+        },
+        {
+          "ad": "Çay",
+          "gorsel": "https://placehold.co/300x200?text=Çay"
+        }
+      ],
+      "Öğlen": [
+        {
+          "ad": "Ezogelin Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Ezogelin+Çorbası"
+        },
+        {
+          "ad": "Tavuk Haşlama",
+          "gorsel": "https://placehold.co/300x200?text=Tavuk+Haşlama"
+        },
+        {
+          "ad": "Bulgur Pilavı",
+          "gorsel": "https://placehold.co/300x200?text=Bulgur+Pilavı"
+        },
+        {
+          "ad": "Cacık",
+          "gorsel": "https://placehold.co/300x200?text=Cacık"
+        }
+      ],
+      "Akşam": [
+        {
+          "ad": "Mercimek Çorbası",
+          "gorsel": "https://placehold.co/300x200?text=Mercimek+Çorbası"
+        },
+        {
+          "ad": "Karnıbahar Graten",
+          "gorsel": "https://placehold.co/300x200?text=Karnıbahar+Graten"
+        },
+        {
+          "ad": "Pirinç Pilavı",
+          "gorsel": "https://placehold.co/300x200?text=Pirinç+Pilavı"
+        },
+        {
+          "ad": "Aşure",
+          "gorsel": "https://placehold.co/300x200?text=Aşure"
+        }
+      ]
+    }
   }
 ] 
